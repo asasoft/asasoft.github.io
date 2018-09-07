@@ -4,7 +4,8 @@ title:  "Samsung custom kernel"
 date:   2018-09-06 18:41:21 -0300
 categories: kernel samsung galaxy tab3 t210 b5510
 ---
-This new site is under construction. If you're looking for a custom kernel take a look here:
+If you're looking for a custom kernel take a look here:
 
-[SM-T210](https://github.com/asasoft/lt02wifi-kk-kernel/releases) /
-[B5510](https://github.com/asasoft/Kernel-B5510/releases)
+[Samsung Galaxy TAB3 SM-T210 lt02wifi](https://github.com/asasoft/lt02wifi-kk-kernel/releases)
+
+[Samsung Galaxy Pro Y B5510](https://github.com/asasoft/Kernel-B5510/releases)
