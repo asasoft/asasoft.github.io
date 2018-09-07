@@ -17,7 +17,7 @@ title: ASAsoft
 email:
 description: Software Development
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://asasoft.cf" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://asasoft.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username:  asasoft
 
