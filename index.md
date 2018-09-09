@@ -15,7 +15,7 @@ layout: default
 <hr />
 
 [Samsung Galaxy Pro Y B5510](https://github.com/asasoft/Kernel-B5510/releases)
-
+<ul>
 <li>Swap support (kernel config only) (18/05/13)</li>
 <li>I/O Schedulers CFQ , Deadline , No-op default</li>
 <li>Ext3/Ext4 Support (No mount scripts)</li>
@@ -24,3 +24,4 @@ layout: default
 <li>Fix bcmsdhc driver wake locks prevent deep sleep ( bcm_sdhc.3 wake lock )</li>
 <li>Fix Frequency Table (CpuSpy, SetCPU and others work now)</li>
 <li>Ondemand governor added</li>
+</ul>
