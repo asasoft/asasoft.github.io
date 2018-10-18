@@ -7,14 +7,16 @@ layout: default
 
 <h2>Custom Samsung Kernel</h2>
 
-
+![SM-T210](/assets/img/samsung-galaxy-tab3-smt210.jpg){:class="img-responsive"}
 [Samsung Galaxy TAB3 SM-T210 lt02wifi](https://github.com/asasoft/lt02wifi-kk-kernel/releases)
+
 <ul>
 <li>Security patches</li>
 </ul>
 <hr />
-
+![SM-T210](/assets/img/samsung-galaxy-y-pro-b5510.jpg){:class="img-responsive"}
 [Samsung Galaxy Pro Y B5510](https://github.com/asasoft/Kernel-B5510/releases)
+
 <ul>
 <li>Swap support (kernel config only) (18/05/13)</li>
 <li>I/O Schedulers CFQ , Deadline , No-op default</li>
