@@ -2,7 +2,7 @@
   {
     "id": "5123",
     "name": "titulo1",
-    "vidurl": "asdasdasdas",
+    "vidurl": "https://www.youtube.com/",
     "wikiurl": "https://www.wikipedia.org/",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
@@ -17,7 +17,7 @@ mollit anim id est laborum.
  {
     "id": "3123",
     "name": "titulo2",
-    "vidurl": "768asdasdasdas",
+    "vidurl": "https://www.youtube.com/",
     "wikiurl": "https://www.wikipedia.org/",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
@@ -33,7 +33,7 @@ mollit anim id est laborum.
  {
     "id": "3126",
     "name": "titulo3",
-    "vidurl": "768asdasdasdas",
+    "vidurl": "https://www.youtube.com/",
     "wikiurl": "https://www.wikipedia.org/",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
@@ -48,7 +48,7 @@ mollit anim id est laborum.
  {
     "id": "3128",
     "name": "titulo4",
-    "vidurl": "768asdasdasdas",
+    "vidurl": "https://www.youtube.com/",
     "wikiurl": "https://www.wikipedia.org/",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
