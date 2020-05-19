@@ -3,16 +3,30 @@
     "id": "5123",
     "name": "titulo1",
     "vidurl": "asdasdasdas",
-    "wikiurl": "fdgdfgdfgdfg",
-    "description": "trytrytryrt",
+    "wikiurl": "https://www.wikipedia.org/",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+mollit anim id est laborum.
+",
     "imgurl": "https://github.com/asasoft/asasoft.github.io/raw/master/assets/img/gettyimages-155422097-612x612.jpg"
   },
  {
     "id": "3123",
     "name": "titulo2",
     "vidurl": "768asdasdasdas",
-    "wikiurl": "2f123dgdfgdfgdfg",
-    "description": "345trytrytryrt",
+    "wikiurl": "https://www.wikipedia.org/",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+mollit anim id est laborum.
+",
     "imgurl": "https://github.com/asasoft/asasoft.github.io/raw/master/assets/img/gettyimages-503708148-612x612.jpg"
   },
 
@@ -20,16 +34,30 @@
     "id": "3126",
     "name": "titulo3",
     "vidurl": "768asdasdasdas",
-    "wikiurl": "2f123dgdfgdfgdfg",
-    "description": "345trytrytryrt",
+    "wikiurl": "https://www.wikipedia.org/",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+mollit anim id est laborum.
+",
     "imgurl": "https://github.com/asasoft/asasoft.github.io/raw/master/assets/img/gettyimages-507025846-612x612.jpg"
   },
  {
     "id": "3128",
     "name": "titulo4",
     "vidurl": "768asdasdasdas",
-    "wikiurl": "2f123dgdfgdfgdfg",
-    "description": "345trytrytryrt",
+    "wikiurl": "https://www.wikipedia.org/",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+mollit anim id est laborum.
+",
     "imgurl": "https://github.com/asasoft/asasoft.github.io/raw/master/assets/img/gettyimages-91600964-612x612.jpg"
   }
 
