@@ -10,13 +10,14 @@ layout: default
 <ul>
 <li>Security patches</li>
 </ul>
+[Source Code](https://github.com/asasoft/lt02wifi-kk-kernel)  
 Flasheable ODIN image md5 b4746aad68bb2c801d137583b895f580
 
 Don't decompress or modify the downloaded file. Open Odin (v3.09 recommended) put your tablet in download mode and connect your usb cable, open PDA box and select the file. Start Flash.
 
 This is an ODIN flasheable kernel, before start make your own kernel/rom backup just in case.  
 
-[Source Code](https://github.com/asasoft/lt02wifi-kk-kernel)  
+  
 [Download](https://github.com/asasoft/lt02wifi-kk-kernel/releases/download/v1.2.1/asasoft-1.2.1-kernel-smt210-lt02wifi-kitkat.tar.md5)
 <hr />
 <h4>Galaxy Pro Y B5510</h4>  
@@ -31,12 +32,13 @@ This is an ODIN flasheable kernel, before start make your own kernel/rom backup 
 <li>Fix Frequency Table (CpuSpy, SetCPU and others work now)</li>
 <li>Ondemand governor added</li>
 </ul>
+[Source Code](https://github.com/asasoft/Kernel-B5510)  
 Don't decompress or modify the downloaded file. Open Odin (v1.84 recommended) put your phone in download mode and connect your usb cable,
 open PDA box and select the file. Start Flash.  
 
 Flasheable ODIN image md5 3f5e58ea9d9565f07da7b9a59b36f9d9  
 
-[Source Code](https://github.com/asasoft/Kernel-B5510)  
+  
 [Download](https://github.com/asasoft/Kernel-B5510/releases/download/1.4.2/Samsung-B5510-Kernel-PDA-Odin.v1.4.2.tar)
 <hr />
 Disclaimer : Flashing firmware involves risk. You can brick your device, proceed with caution.<br/>The Software is provided "as is" without warranty of any kind, either express or implied.
