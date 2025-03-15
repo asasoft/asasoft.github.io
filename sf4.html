@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG Loader</title>
+    <style>
+        /* Make the SVG container fill the screen */
+        #svg-container {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrollbars */
+            position: relative; /* Needed for absolute positioning of the list */
+        }
+
+        /* Make the SVG scale to fit the container */
+        #svg-container svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Style for text elements */
+        text {
+            pointer-events: none; /* Prevent text from blocking interactions */
+        }
+
+        /* Style for the vertical list */
+        #text-list {
+            position: absolute;
+            left: 20px; /* Position the list on the left side */
+            top: 20px; /* Add some padding from the top */
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            max-height: 90vh; /* Limit the height of the list */
+            overflow-y: auto; /* Add scroll if the list is too long */
+        }
+
+        #text-list div {
+            margin: 5px 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #000000;
+            cursor: pointer; /* Change cursor to pointer to indicate clickable */
+        }
+
+        #text-list div:hover {
+            background: rgba(0, 0, 0, 0.1); /* Add hover effect */
+        }
+
+        /* Flash effect for SVG paths */
+        @keyframes flash {
+            0% { fill: #ff0000; } /* Start with red */
+            50% { fill: #ffffff; } /* Flash to white */
+            100% { fill: #ff0000; } /* Return to red */
+        }
+
+        .flash-effect {
+            animation: flash 0.5s ease-in-out 2; /* Flash twice */
+        }
+    </style>
+</head>
+<body>
+    <div id="svg-container">
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <clipPath id="a">
+                    <path d="m-471493.75,104382.5l260913.7,0l0,200481.7l-260913.7,0l0,-200481.7z" id="svg_1"/>
+                </clipPath>
+            </defs>
+            <g class="layer">
+                <g clip-path="url(#a)" id="svg_2">
+                    <!-- Paths will go here -->
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Container for the vertical list -->
+    <div id="text-list"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            console.log("DOM loaded.");
+
+            try {
+                // Fetch paths.svg
+                const response = await fetch("assets/img/paths.svg");
+                if (!response.ok) {
+                    throw new Error(`Failed to load paths.svg: ${response.status} ${response.statusText}`);
+                }
+
+                // Parse the SVG content
+                const svgText = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(svgText, "image/svg+xml");
+                const storageSvg = doc.querySelector("svg");
+
+                if (!storageSvg) {
+                    throw new Error("No SVG content found in paths.svg.");
+                }
+
+                const mainSvg = document.querySelector("svg");
+                const targetGroup = mainSvg.querySelector('g.layer > g');
+
+                // Loop through groups from svg_3 to svg_21 and append them to the main SVG
+                for (let i = 3; i <= 21; i++) {
+                    const groupId = `svg_${i}`;
+                    const group = storageSvg.querySelector(`#${groupId}`);
+                    if (group) {
+                        console.log(`Loaded group: ID = ${groupId}`);
+                        const clonedGroup = group.cloneNode(true);
+
+                        // Remove the transform attribute from the path (if any)
+                        const path = clonedGroup.querySelector("path");
+                        if (path) {
+                            path.removeAttribute("transform");
+                        }
+
+                        // Append the cloned group to the target group
+                        targetGroup.appendChild(clonedGroup);
+                    } else {
+                        console.warn(`Group with ID: ${groupId} not found in paths.svg`);
+                    }
+                }
+
+                console.log("Paths loaded successfully.");
+
+                // Show the SVG container
+                document.getElementById("svg-container").style.display = "block";
+
+                // Calculate the bounding box of the SVG content
+                const bbox = targetGroup.getBBox();
+                console.log("Bounding box:", bbox);
+
+                // Add a viewBox to the main SVG
+                mainSvg.setAttribute("viewBox", `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
+
+                // Resize the SVG to fit the screen
+                const svgElement = document.querySelector("#svg-container svg");
+                const originalWidth = bbox.width; // Original width of the SVG content
+                const originalHeight = bbox.height; // Original height of the SVG content
+
+                function resizeSVG() {
+                    const screenWidth = window.innerWidth;
+                    const screenHeight = window.innerHeight;
+
+                    // Calculate the scaling factor
+                    const scaleX = screenWidth / originalWidth;
+                    const scaleY = screenHeight / originalHeight;
+                    const scale = Math.min(scaleX, scaleY); // Use the smaller scale to fit the entire SVG
+
+                    // Apply the scaling factor to the SVG
+                    svgElement.setAttribute("width", originalWidth * scale);
+                    svgElement.setAttribute("height", originalHeight * scale);
+                }
+
+                // Resize the SVG on page load and window resize
+                resizeSVG();
+                window.addEventListener("resize", resizeSVG);
+
+                // Add text elements after the SVG is fully loaded and resized
+                const textElements = [
+                    { id: "svg_13", text: "9 de Julio" },
+                    { id: "svg_21", text: "Vera" },
+                    { id: "svg_9", text: "General Obligado" },
+                    { id: "svg_15", text: "San Cristóbal" },
+                    { id: "svg_18", text: "San Justo" },
+                    { id: "svg_16", text: "San Javier" },
+                    { id: "svg_5", text: "Castellanos" },
+                    { id: "svg_12", text: "Las Colonias" },
+                    { id: "svg_7", text: "Garay" },
+                    { id: "svg_11", text: "La Capital" },
+                    { id: "svg_17", text: "San Jerónimo" },
+                    { id: "svg_20", text: "San Martín" },
+                    { id: "svg_3", text: "Belgrano" },
+                    { id: "svg_10", text: "Iriondo" },
+                    { id: "svg_14", text: "Rosario" },
+                    { id: "svg_19", text: "San Lorenzo" },
+                    { id: "svg_4", text: "Caseros" },
+                    { id: "svg_8", text: "General López" },
+                    { id: "svg_6", text: "Constitución" }
+                ];
+
+                // Add text elements to the SVG
+                textElements.forEach(item => {
+                    const path = document.querySelector(`#${item.id} path`);
+                    if (path) {
+                        const bbox = path.getBBox();
+                        const centerX = bbox.x + bbox.width / 2;
+                        const centerY = bbox.y + bbox.height / 2;
+
+                        // Create the text element
+                        const textElement = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                        textElement.setAttribute("x", centerX);
+                        textElement.setAttribute("y", centerY);
+                        textElement.setAttribute("text-anchor", "middle");
+                        textElement.setAttribute("dominant-baseline", "middle");
+                        textElement.setAttribute("fill", "#000000");
+                        textElement.setAttribute("font-family", "Arial");
+                        textElement.setAttribute("font-size", "500");
+                        textElement.setAttribute("id", item.id + "_text");
+                        textElement.textContent = item.text;
+
+                        // Append the text element to the target group
+                        targetGroup.appendChild(textElement);
+                    } else {
+                        console.warn(`Path with ID: ${item.id} not found.`);
+                    }
+                });
+
+                console.log("Text elements added successfully.");
+
+                // Create a vertical list of text elements in alphabetical order
+                const textListContainer = document.getElementById("text-list");
+
+                // Sort text elements alphabetically
+                textElements.sort((a, b) => a.text.localeCompare(b.text));
+
+                // Add each text element to the list
+                textElements.forEach(item => {
+                    const listItem = document.createElement("div");
+                    listItem.textContent = item.text;
+                    listItem.dataset.id = item.id; // Store the ID of the corresponding path
+                    textListContainer.appendChild(listItem);
+
+                    // Add click event listener to the list item
+                    listItem.addEventListener("click", () => {
+                        const path = document.querySelector(`#${item.id} path`);
+                        if (path) {
+                            // Add the flash effect class
+                            path.classList.add("flash-effect");
+
+                            // Remove the flash effect class after the animation ends
+                            path.addEventListener("animationend", () => {
+                                path.classList.remove("flash-effect");
+                            }, { once: true });
+                        }
+                    });
+                });
+
+                console.log("Vertical list created successfully.");
+            } catch (error) {
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
